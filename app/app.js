@@ -7,17 +7,14 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.version',
     'ngResource'
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+    .constant("RootUrl",'http://ldays.cloudapp.net/ic-war/contentservice/v1/' )
+    //.constant("RootUrl",'http://localhost:8080/ic/contentservice/v1/' )
+    .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }])
     // note, this factory should be broken out into a sub-module
-    .factory("Templates", function($resource) {
-        // deployed environment
-        //
-        //return $resource('http://ldays.cloudapp.net/ic-war/contentservice/v1/templates');
+    .factory("Templates", ['RootUrl', '$resource', function(RootUrl,$resource) {
 
-        // local environment
-        //
-        return angular.fromJson($resource('http://localhost:8080/ic/contentservice/v1/templates'));
-});
+        return angular.fromJson($resource(RootUrl + 'templates'));
+}]);
