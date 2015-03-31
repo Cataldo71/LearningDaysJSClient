@@ -13,6 +13,9 @@ angular.module('myApp.view1', ['ngRoute'])
 
         $scope.templates = Templates.get();
 //        $scope.templates = {templateId:2};
+        $scope.getTemplateUrl = function(templateId) {
+            return 'http://localhost:8080/ic/contentservice/v1/templates/' + templateId;
+        };
 
 
 }]);

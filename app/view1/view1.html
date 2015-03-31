@@ -2,12 +2,29 @@
 <table class="table table-striped" cellpadding="5" border="3">
     <tr>
         <th>Template Id</th>
+        <th>Name</th>
         <th>Description</th>
+        <th>File Name</th>
+        <th>UpLoaded By</th>
+        <th>Units</th>
+        <th>Categories</th>
+        <th>Storage Id</th>
+        <th>Upload Token</th>
+        <th>Download Token</th>
         <th>Thumbnail Url</th>
     </tr>
-    <tr >
-        <td>{{templates.templateDescriptors[0].templateId}}</td>
-        <td>{{templates.templateDescriptors[0].templateDesc}}</td>
-        <td>{{templates.templateDescriptors[0].thumbnailUrl}}</td>
+    <tr ng-repeat="template in templates.templateDescriptors">
+        <!-- right now just jumps to different url that spits out JSON. not a good user experience :) -->
+        <td><a href={{getTemplateUrl(template.templateId)}}>{{template.templateId}}</a></td>
+        <td>{{template.templateName}}</td>
+        <td>{{template.description}}</td>
+        <td>{{template.fileName}}</td>
+        <td>{{template.contributor}}</td>
+        <td>{{template.units}}</td>
+        <td>{{template.categories}}</td>
+        <td>{{template.storageId}}</td>
+        <td>{{template.uploadToken}}</td>
+        <td>{{template.downloadToken}}</td>
+        <td>{{template.thumbnailUrl}}</td>
     </tr>
 </table>
