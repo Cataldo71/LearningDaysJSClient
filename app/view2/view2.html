@@ -1,5 +1,35 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-controller="View2Ctrl" style = "float:left; width: 50%;">
+    <form  class="pure-form pure-form-stacked" ng-submit="uploadForm.submitUpload()">
+        <div class="form_column">
+            <label for="name">Name</label>
+            <input type="text" id="name" ng-model="uploadForm.name"> <br/>
+
+            <label for="description">Description</label>
+            <input height="20" aria-multiline="true" type="text" id="description" ng-model="uploadForm.description" >  <br/>
+
+            <label for="contributor">Uploader</label>
+            <input type="text" id="contributor" ng-model="uploadForm.contributor" >  <br/>
+
+        </div>
+        <div class="form_column">
+            <label for="category">Category</label>
+            <select ng-model="uploadForm.category" id="category">
+                <option value="part">Part</option>
+                <option value="assembly">Assembly</option>
+                <option value="drawing">Drawing</option>
+            </select><br/>
+            <label for="units">Units</label>
+            <select ng-model="uploadForm.units" id="units">
+                <option value="in">Inches</option>
+                <option value="mm">Millimeters</option>
+            </select><br/>
+            <label for="file">Template File</label>
+            <input id="file" type="file" ng-file-select="onFileSelect($file)" ng-model="uploadForm.file">
+
+        </div>
+        <div class="submit_form">
+            <input class="pure-button pure-button-primary" type="submit" value="Submit Form">
+        </div>
+
+    </form>
+</div>

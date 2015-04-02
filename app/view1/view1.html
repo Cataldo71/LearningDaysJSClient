@@ -1,30 +1,27 @@
-<h3>Learning Days AngularJS call to the template service endpoint</h3>
-<table class="table table-striped" cellpadding="5" border="3">
-    <tr>
-        <th>Template Id</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>File Name</th>
-        <th>UpLoaded By</th>
-        <th>Units</th>
-        <th>Categories</th>
-        <th>Storage Id</th>
-        <th>Upload Token</th>
-        <th>Download Token</th>
-        <th>Thumbnail Url</th>
-    </tr>
-    <tr ng-repeat="template in templates.templateDescriptors">
-        <!-- right now just jumps to different url that spits out JSON. not a good user experience :) -->
-        <td><a href={{getTemplateUrl(template.templateId)}}>{{template.templateId}}</a></td>
-        <td>{{template.templateName}}</td>
-        <td>{{template.description}}</td>
-        <td>{{template.fileName}}</td>
-        <td>{{template.contributor}}</td>
-        <td>{{template.units}}</td>
-        <td>{{template.categories}}</td>
-        <td>{{template.storageId}}</td>
-        <td>{{template.uploadToken}}</td>
-        <td>{{template.downloadToken}}</td>
-        <td>{{template.thumbnailUrl}}</td>
-    </tr>
-</table>
+<div class="accordion__container">
+
+    <div class="accordion__tab">
+        <div class="accordion__tab-title" ng-click="openTab('tab one')" >
+            <img src="images/part.png"/>  Part Templates</div>
+        <div ng-repeat="template in templates.templateDescriptors" class="accordion__tab-content" ng-show="isOpenTab('tab one')" >
+            <p class="content-title"><img src="images/part.png"/> {{template.templateName}}</p>
+            <p class="content">File Name: <i>{{template.fileName}}</i><br>
+            Units: {{template.units}}<br>Size: {{getReadableFileSizeString(template.fileSize)}}</p>
+        </div>
+    </div>
+    <div class="accordion__tab">
+        <div class="accordion__tab-title" ng-click="openTab('tab two')">
+            <img src="images/drawing.png"/>  Drawing Templates</div>
+        <div class="accordion__tab-content" ng-show="isOpenTab('tab two')">
+            <p>template template da da da</p>
+        </div>
+    </div>
+    <div class="accordion__tab">
+        <div class="accordion__tab-title" ng-click="openTab('tab three')">
+            <img src="images/assembly.PNG"/>  Assembly Templates</div>
+        <div class="accordion__tab-content"ng-show="isOpenTab('tab three')">
+            <p>template template da da da</p>
+        </div>
+    </div>
+</div>
+

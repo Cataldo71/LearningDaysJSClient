@@ -1,5 +1,57 @@
 /* app css stylesheet */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
+a {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+
+.header {
+
+    top: auto;
+    margin: 3em auto;
+}
+.menu_area
+{
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+    clear:left;
+}
+
+.brand-title {
+    font-weight: 600;
+    font-size: 18pt;
+    color:gray;
+    float:left;
+    background-color: inherit;
+}
+.search_box {
+    font-weight: 300;
+    font-size: 12pt;
+    color:gray;
+    float:right;
+    top: auto;
+    margin: 2em auto;
+}
+.brand-tagline {
+    font-weight: 300;
+    color: rgb(176, 202, 219);
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -27,4 +79,58 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+.accordion__container {
+    background: #ffffff;
+    padding: 20px;
+}
+.accordion__tab {
+    background: #ffffff;
+    color: #0000FF;
+    clear:left;
+}
+.accordion__tab-title {
+    background: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+}
+.accordion__tab-content {
+    background: #ffffff;
+    padding: 15px;
+    width:200px;
+    height: 150px;
+    font-size: small;
+    float:left;
+    position:relative;
+    border: 2px solid #aaaaaa;
+    border-spacing: 5em;
+    border-radius: 2em;
+    cursor: pointer;
+}
+.content-title {
+    font-size:12pt;
+    font-weight: bold;
+    padding: 0;
+    text-space: 0;
+    margin-bottom: 0;
+    text-wrap:none;
+    height: 50px;
+    clear:left;
+}
+.content {
+    font-size:9pt;
+    padding: 0;
+    text-space: 0;
+    margin-bottom: 0;
+
+}
+.form_column
+{
+    padding:15px;
+    float:left;
+}
+.submit_form
+{
+    padding:15px;
+    clear:left;
 }

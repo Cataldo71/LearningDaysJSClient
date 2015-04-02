@@ -6,33 +6,49 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Inventor Connect Content Management Portal</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="components/progressbar/ngProgress.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
+
+<form  class="pure-form pure-menu-horizontal title_area" ng-submit="uploadForm.submitUpload()">
+    <p class="brand-title">Content Management Portal > Templates</p>
+    <div class="search_box">
+    <label for="searchbox">Search</label>
+    <input class="content" id="searchbox" type="text">
+    </div>
+</form >
+
+<div class="menu_area">
+<div class="pure-menu pure-menu-horizontal">
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item"><a href="#/view1" class="pure-menu-link">Browse Templates</a></li>
+    <li class="pure-menu-item"><a href="#/view2" class="pure-menu-link">Upload New Template</a></li>
   </ul>
- <p> Root Url: {{serviceUrl}}</p>
+</div>
+</div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
+  <div ng-view ></div>
   <br>
-  <div>Angular seed app: v<span app-version></span></div>
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
@@ -40,5 +56,8 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+<script src="components/progressbar/ngProgress.js"></script>
+<script src="bower_components/angular-azure-blob-upload-master/azure-blob-upload.js"></script>
+
 </body>
 </html>
