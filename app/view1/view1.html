@@ -1,12 +1,13 @@
-<div class="accordion__container">
+<div class="accordion__container" xmlns="http://www.w3.org/1999/html">
 
     <div class="accordion__tab">
         <div class="accordion__tab-title" ng-click="openTab('tab one')" >
             <img src="images/part.png"/>  Part Templates</div>
-        <div ng-repeat="template in templates.templateDescriptors" class="accordion__tab-content" ng-show="isOpenTab('tab one')" >
-            <p class="content-title"><img src="images/part.png"/> {{template.templateName}}</p>
-            <p class="content">File Name: <i>{{template.fileName}}</i><br>
-            Units: {{template.units}}<br>Size: {{getReadableFileSizeString(template.fileSize)}}</p>
+        <div ng-repeat="template in templates.templateDescriptors" class="accordion_tab_content_container" ng-click="onSelectTemplate(template)" ng-show="isOpenTab('tab one')" >
+            <div class="accordion__tab-content">
+                <img src="images/Part_thumbnail.png" width="90%" height="90%"/><br>
+                <p class="content-title">{{template.templateName}}</p>
+            </div>
         </div>
     </div>
     <div class="accordion__tab">
@@ -23,5 +24,25 @@
             <p>template template da da da</p>
         </div>
     </div>
+
 </div>
 
+<div class="props-area" id="property_view">
+
+    <img src="images/thumb.PNG" width="100"/> <input type="button" class="pure-button pure-button-primary submit_form" value="Download" id="download">
+    <div class="prop_column" >
+        <div class="prop_column_content">
+            <b>Name:</b> <span ng-bind="activeTemplate.templateName"></span><br>
+            <b>Description:</b><br> <span ng-bind="activeTemplate.description"></span>
+<br><div  class="prop_column_small">
+            <b>File Name: </b><span ng-bind="activeTemplate.fileName"></span><br>
+            <b>File Size: </b><span ng-bind="activeTemplate.fileSizeReadable"></span><br>
+            <b>Category: </b><span ng-bind="activeTemplate.categories[0]"></span><br>
+            <b>Units: </b><span ng-bind="activeTemplate.units"></span><br>
+            <b>Url: </b>{{getTemplateUrl(activeTemplate.templateId)}}</div>
+            <br>
+            <center><img src="images/tooltip_part.png"/></center>
+        </div>
+    </div>
+
+</div>

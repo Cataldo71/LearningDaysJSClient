@@ -12,9 +12,13 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', ['$scope','Templates', 'azureBlob',function($scope,Templates, azureBlob) {
 
         $scope.templates = angular.fromJson(Templates.get());
+
 //        $scope.templates = {templateId:2};
         $scope.getTemplateUrl = function(templateId) {
+            if(templateId > 0)
             return 'http://localhost:8080/ic/contentservice/v1/templates/' + templateId;
+            else
+            return '';
         };
 
         $scope.getTemplateImage = function(category) {
@@ -26,7 +30,8 @@ angular.module('myApp.view1', ['ngRoute'])
         }
 
 //initiate an array to hold all active tabs
-        $scope.activeTabs = [];
+        $scope.activeTabs = ['tab one'];
+
 
         //check if the tab is active
         $scope.isOpenTab = function (tab) {
@@ -54,7 +59,7 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.getReadableFileSizeString = function(fileSizeInBytes) {
 
             var i = -1;
-            var byteUnits = [' kB', ' MB', ' GB', ' TB', 'PB', 'EB', 'ZB', 'YB'];
+            var byteUnits = [' KB', ' MB', ' GB', ' TB', 'PB', 'EB', 'ZB', 'YB'];
             do {
                 fileSizeInBytes = fileSizeInBytes / 1024;
                 i++;
@@ -62,4 +67,10 @@ angular.module('myApp.view1', ['ngRoute'])
 
             return Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
         };
+        $scope.onSelectTemplate = function(template) {
+            // update the properties area with the new template info
+            //
+            $scope.activeTemplate = template;
+            $scope.activeTemplate.fileSizeReadable = $scope.getReadableFileSizeString(template.fileSize);
+        }
 }]);

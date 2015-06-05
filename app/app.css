@@ -32,13 +32,18 @@ h3 {
     padding: 0 0 0.5em;
     clear:left;
 }
-
+.title_area {
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
 .brand-title {
     font-weight: 600;
     font-size: 18pt;
     color:gray;
     float:left;
     background-color: inherit;
+    padding-left:20px;
 }
 .search_box {
     font-weight: 300;
@@ -47,13 +52,20 @@ h3 {
     float:right;
     top: auto;
     margin: 2em auto;
+    padding-right:20px;
 }
+.control-area {
+    float:left;
+}
+
 .brand-tagline {
     font-weight: 300;
     color: rgb(176, 202, 219);
+    padding:20px;
 }
 .menu {
   list-style: none;
+    border-top: 0.1em solid black;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
@@ -83,6 +95,9 @@ h3 {
 .accordion__container {
     background: #ffffff;
     padding: 20px;
+    width:1000px;
+    float:left;
+
 }
 .accordion__tab {
     background: #ffffff;
@@ -91,34 +106,48 @@ h3 {
 }
 .accordion__tab-title {
     background: #ffffff;
+    color:grey;
     padding: 5px;
     cursor: pointer;
+    border-bottom: 1px solid slategray;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+}
+.accordion_tab_content_container{
+    width:125px;
+    height: 125px;
+    float:left;
 }
 .accordion__tab-content {
-    background: #ffffff;
-    padding: 15px;
-    width:200px;
-    height: 150px;
-    font-size: small;
+    background: linear-gradient(to bottom, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* W3C */
+    padding: 5px;
+    font-size: 8pt;
+    color:white;
+    width:90%;
+    max-height: 90%;
+    font-weight: normal;
+    letter-spacing: 0.01em;
     float:left;
-    position:relative;
     border: 2px solid #aaaaaa;
     border-spacing: 5em;
     border-radius: 2em;
     cursor: pointer;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
 }
 .content-title {
-    font-size:12pt;
-    font-weight: bold;
+    font-size:9pt;
     padding: 0;
     text-space: 0;
     margin-bottom: 0;
     text-wrap:none;
-    height: 50px;
+    height: 20px;
     clear:left;
+    align-content: center;
 }
 .content {
-    font-size:9pt;
+    font-size:6pt;
     padding: 0;
     text-space: 0;
     margin-bottom: 0;
@@ -128,6 +157,30 @@ h3 {
 {
     padding:15px;
     float:left;
+}
+.props-area {
+    float:right;
+    border-left: 0.1em solid black;
+    padding:5px;
+    width:300px;
+    height:500px;
+}
+.prop_column
+ {
+     padding:15px;
+     font-size:small;
+    clear:right;
+    width:200px;
+
+ }
+.prop_column_content
+{
+    height:200px;
+}
+.prop_column_small
+{
+
+    font-size: x-small;
 }
 .submit_form
 {
